@@ -12,7 +12,7 @@ kernels = [3, 5, 7]
 for k in kernels:
         # Create normalized box kernel
         kernel = np.ones((k, k), np.float32) / (k * k)
-        results[f'filter2D_{k}x{k}'] = cv2.filter2D(image, -1, kernel)
+        results[f'box_kernel_{k}x{k}'] = cv2.filter2D(image, -1, kernel)
 
 for name, img in results.items():
         cv2.imshow(name, img)
